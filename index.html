@@ -18,6 +18,9 @@
     </div>
   </nav>
 
+  <div class="description-styles">
+  <p>Search for news and articles of New York Times between the years 1850 and 2017</p>
+</div>
 
 <div class="container">
      <div>
@@ -40,6 +43,10 @@
  </div>
  			    
 		   		
+<div style="text-align: center" ng-show="resultsNotFound">
+  <h5>Sorry, not results for your search criteria or you do not have internet</h5>
+  <p>You can try searching for example sears tower chicago article or navy pier chicago etc...</p>
+</div>
 
 <div ng-show="showArticles" ng-repeat="article in articles">
   <div class="post-preview">
@@ -72,7 +79,6 @@
 <script type="text/javascript" src="lib/nouislider.min.js"></script>
 <script type="text/javascript" src="lib/nouisliderMaterialize.js"></script>
 <script src="js/app.js"></script>
-<script src="js/controllers/mainController.js"></script>
 <script src="js/controllers/newyorktimesController.js"></script>
 <script src="js/services/newyorktimesService.js"></script>
 <script src="lib/moment.js"></script>

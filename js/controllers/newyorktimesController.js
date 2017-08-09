@@ -8,6 +8,7 @@
       $scope.showArticles = false;
       $scope.articles = [];
       $scope.lastSearchAt = "";
+      $scope.resultsNotFound = false;
 
       $scope.checkIfEnterKeyWasPressed = function($event)
       {
@@ -30,6 +31,16 @@
         $scope.lastSearchAt = new Date();
         newyorktimesService.getRequestedResults($scope.searchString, $scope.startYear, $scope.endYear).then(function(apiResponse)
         {
+            if(apiResponse.data.response.docs.length == 0)
+              {
+                $scope.showArticles = false;
+                $scope.resultsNotFound = true;
+              }
+              else
+                {
+                  $scope.showArticles = true;
+                  $scope.resultsNotFound = false;
+                }
             for(i = 0; i < apiResponse.data.response.docs.length; i++)
             {
               var item = apiResponse.data.response.docs[i];

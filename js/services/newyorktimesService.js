@@ -16,7 +16,7 @@ codeWalkThrough.factory('newyorktimesService', function($http) {
             {
                 baseSearchURL = baseSearchURL + '&end_date='+ endYear + '0101';
             }
-        
+            
             return $http.get(baseSearchURL);
         }
     };
