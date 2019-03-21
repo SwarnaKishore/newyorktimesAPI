@@ -1,7 +1,7 @@
 codeWalkThrough.factory('newyorktimesService', function($http) {
     return {
         getRequestedResults: function(searchString, startYear, endYear) {
-       	    var baseSearchURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=a56b24ab430f4f9badd6af40ba347eb3&sort=oldest';
+       	    var baseSearchURL = 'https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=Ykcpdk8AHBGYOAtznSZjFALRQxGtTfyp&sort=oldest';
         	if(searchString !== "")
              {
         		baseSearchURL = baseSearchURL + '&q="'+ searchString + '"';
